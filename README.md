@@ -2,6 +2,12 @@
 
 qmer transformation is the alternative methods to summarize RNA-Seq data without losing alignment information.
 
+# Requirements
+
+- python (3.7.0)
+- pandas (0.23.4)
+- biopython (1.75)
+
 # How to use
 
 1. Clone this repository :  ``git clone https://github.com/tatsumashoji/qmer``
