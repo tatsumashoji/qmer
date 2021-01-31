@@ -1,32 +1,26 @@
 # -*- coding: utf-8 -*-
+import sys
 from Bio import SeqIO
 import pandas as pd
 
-def count(seq, n):
-    res = {}
+def count(res, seq, n, bias):
     for i in range(len(seq)-n+1):
-        if seq[i:i+n] in res.keys():
-            res[seq[i:i+n]] += 1
-        else:
-            res[seq[i:i+n]] = 1
+        try:
+            res[seq[i:i+n]] += bias
+        except:
+            res[seq[i:i+n]] = bias
 
     return res
 
 
 def count_fasta(seqs, n):
-    res_all = {}
+    res = {}
     for name in seqs.keys():
         bias = int(name.split("_")[1])
         seq = str(seqs[name])
-        res = count(seq, n)
-        res = {key : res[key] * bias for key in res.keys()}
-        for key in res.keys():
-            try:
-                res_all[key] += res[key]
-            except:
-                res_all[key] = res[key]
+        res = count(res, seq, n, bias)
 
-    return res_all
+    return res
 
 
 def drop_N(qmer):
@@ -40,8 +34,11 @@ def save_qmer(qmer, fname):
 
 
 if __name__ == '__main__':
-    seqs = {i.description : i.seq for i in SeqIO.parse("tp2","fasta")}
-    qmers = [count_fasta(seqs,i+1) for i in range(11)]
-    qmers_drop = [drop_N(i) for i in qmers]
-    for i in range(len(qmers_drop)):
-        save_qmer(qmers_drop[i], "qmer_"+str(i+1)+".csv")
+    seqs = {i.description : i.seq for i in SeqIO.parse("/home/tatsu2/projects/qmer/"+str(sys.argv[1])+".tp2","fasta")}
+    size = int(sys.argv[2])
+
+
+    for i in range(size):
+        qmer = count_fasta(seqs, i+1)
+        qmer_drop = drop_N(qmer)
+        save_qmer(qmer_drop, "/home/tatsu2/projects/qmer/"+str(sys.argv[1])+".qmer_"+str(i+1)+".csv")

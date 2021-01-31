@@ -1,9 +1,12 @@
 #!/bin/bash
 
-cat $1 | grep -v ^@ | cut -f10 | uniq -c | awk '{print$1,$2}' > tp
-python make_fasta.py
-python count_qmer.py
-rm tp tp2
-mkdir -p qmers
-mv qmer_* qmers
+fn=`basename $1`
+$HOME/bin/samtools/samtools view -h $1 > /home/tatsu2/projects/qmer/$fn.tp3
+cat /home/tatsu2/projects/qmer/$fn.tp3 | grep -v ^@ | cut -f10 | uniq -c | awk '{print$1,$2}' > /home/tatsu2/projects/qmer/$fn.tp
+rm /home/tatsu2/projects/qmer/$fn.tp3
+python /home/tatsu2/projects/qmer/make_fasta.py $fn
+python /home/tatsu2/projects/qmer/count_qmer.py $fn 13
+rm /home/tatsu2/projects/qmer/$fn.tp /home/tatsu2/projects/qmer/$fn.tp2
+mkdir -p $2
+mv /home/tatsu2/projects/qmer/$fn.qmer_* $2
 
