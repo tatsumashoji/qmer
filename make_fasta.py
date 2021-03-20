@@ -4,7 +4,7 @@ import sys
 def make_fasta():
     new = []
 
-    f = open("/home/tatsu2/projects/qmer/"+str(sys.argv[1])).readlines()
+    f = open("/home/tatsu2/projects/qmer/"+str(sys.argv[1])+".tp").readlines()
 
     for i in range(len(f)):
         elements = f[i].split(" ")
