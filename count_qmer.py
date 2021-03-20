@@ -34,11 +34,11 @@ def save_qmer(qmer, fname):
 
 
 if __name__ == '__main__':
-    seqs = {i.description : i.seq for i in SeqIO.parse("/home/tatsu2/projects/qmer/"+str(sys.argv[1])+".tp2","fasta")}
+    seqs = {i.description : i.seq for i in SeqIO.parse(str(sys.argv[1])+".tp2","fasta")}
     size = int(sys.argv[2])
 
 
     for i in range(size):
         qmer = count_fasta(seqs, i+1)
         qmer_drop = drop_N(qmer)
-        save_qmer(qmer_drop, "/home/tatsu2/projects/qmer/"+str(sys.argv[1])+".qmer_"+str(i+1)+".csv")
+        save_qmer(qmer_drop, str(sys.argv[1])+".qmer_"+str(i+1)+".csv")
