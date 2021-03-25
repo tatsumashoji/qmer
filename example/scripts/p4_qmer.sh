@@ -2,5 +2,5 @@
 
 source config
 
-$qmer $D2/$1.sam $D4/$1
+$qmer $D2/$1.sam $D4/$1 14
 
