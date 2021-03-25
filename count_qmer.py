@@ -28,7 +28,7 @@ def drop_N(qmer):
 
 def save_qmer(qmer, fname):
     f = open(fname, "w")
-    qmer_array = [i + "," + qmer[i] + "\n" for i in qmer.keys()]
+    qmer_array = [i + "," + str(qmer[i]) + "\n" for i in qmer.keys()]
     f.writelines(qmer_array)
     f.close()
 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     # input1: fasta file
     infile = sys.argv[1]
     fasta = [i.rstrip() for i in open(infile).readlines()]
-    seqs = {infile[2*i].split(">")[1] : infile[2*i+1] for i in range(int(len(infile)/2))}
+    seqs = {fasta[2*i].split(">")[1] : fasta[2*i+1] for i in range(int(len(fasta)/2))}
 
     # input2: q value
     size = int(sys.argv[2])

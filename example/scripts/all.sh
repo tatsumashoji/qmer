@@ -3,6 +3,7 @@
 source config
 
 bash p0_setup.sh
+$HISAT_INDEX $SourceDirGenome $SourceDirGenome
 
 for i in `ls $D0 | cut -d. -f1-2 | cut -d_ -f1 | sort | uniq`;do
 	bash p1_trimmo.sh $i

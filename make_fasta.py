@@ -20,6 +20,6 @@ def make_fasta(infile, outfile):
 
 if __name__ == '__main__':
     infile = sys.argv[1]
-    outfile = infile.split(".")[0] + ".tp2"
+    outfile = sys.argv[2]
     make_fasta(infile, outfile)
 

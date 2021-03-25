@@ -2,8 +2,6 @@
 
 source config
 
-#$HISAT_INDEX $SourceDirGenome $SourceDirGenome
-
 $HISAT2 -x $SourceDirGenome \
 	-1 $D1/${1}_1.clean.fastq.gz \
 	-2 $D1/${1}_2.clean.fastq.gz \

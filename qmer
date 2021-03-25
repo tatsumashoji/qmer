@@ -1,10 +1,13 @@
 #!/bin/bash
 
 fn=`basename $1`
-cat $fn | grep -v ^@ | cut -f10 | uniq -c | awk '{print$1,$2}' > $fn.tp
-python make_fasta.py $fn.tp
-python count_qmer.py $fn.tp2 14
+cat $1 | grep -v ^@ | cut -f10 | uniq -c | awk '{print$1,$2}' > $fn.tp
+python ../../make_fasta.py $fn.tp $fn.tp2
+python ../../count_qmer.py $fn.tp2 14
 rm $fn.tp $fn.tp2
 mkdir -p $2
-mv $fn.qmer_* $2
+mv ${fn}*.qmer_* $2
+for i in `ls $2`;do
+	mv $2/$i $2/`echo $i | awk -F "qmer_" '{print $2}'`
+done
 
