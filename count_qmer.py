@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
-from Bio import SeqIO
-import pandas as pd
+
 
 def count(res, seq, n, bias):
     for i in range(len(seq)-n+1):
@@ -28,17 +27,23 @@ def drop_N(qmer):
 
 
 def save_qmer(qmer, fname):
-    df = pd.DataFrame(pd.Series(qmer))
-    df.columns = [fname]
-    df.to_csv(fname)
+    f = open(fname, "w")
+    qmer_array = [i + "," + qmer[i] + "\n" for i in qmer.keys()]
+    f.writelines(qmer_array)
+    f.close()
 
 
 if __name__ == '__main__':
-    seqs = {i.description : i.seq for i in SeqIO.parse(str(sys.argv[1])+".tp2","fasta")}
+    # input1: fasta file
+    infile = sys.argv[1]
+    fasta = [i.rstrip() for i in open(infile).readlines()]
+    seqs = {infile[2*i].split(">")[1] : infile[2*i+1] for i in range(int(len(infile)/2))}
+
+    # input2: q value
     size = int(sys.argv[2])
 
-
+    # calc. q-mer vectors
     for i in range(size):
         qmer = count_fasta(seqs, i+1)
         qmer_drop = drop_N(qmer)
-        save_qmer(qmer_drop, str(sys.argv[1])+".qmer_"+str(i+1)+".csv")
+        save_qmer(qmer_drop, infile + ".qmer_"+str(i+1)+".csv")
