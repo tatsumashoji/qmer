@@ -5,8 +5,8 @@ RepoName=example
 ProjectDir=`pwd`/../../$RepoName
 ScriptDir=$ProjectDir/scripts
 SourceDir=$ProjectDir/src
-SourceDirGenome=$SourceDir/example.Homo_sapiens.GRCh38.dna.toplevel.fa
-SourceDirGenomeMeta=$SourceDir/example.Homo_sapiens.GRCh38.102.gff3
+SourceDirGenome=$SourceDir/Homo_sapiens.GRCh38.dna.toplevel.fa
+SourceDirGenomeMeta=$SourceDir/homo_sapiens/Homo_sapiens.GRCh38.103.gff3
 StatsDir=$ProjectDir/stats
 StatsDirTrimo=$StatsDir/trimo
 StatsDirBam=$StatsDir/bam
@@ -17,6 +17,7 @@ D3=$ProjectDir/count
 D4=$ProjectDir/qmers
 
 # Command path
+fastq_dump=$HOME/bin/sratoolkit.2.10.8-centos_linux64/bin/fastq-dump
 Trimmo=$HOME/bin/Trimmomatic-0.39/trimmomatic-0.39.jar
 Iclip=$HOME/bin/Trimmomatic-0.39/adapters/all.SE.fa
 HISAT_INDEX=$HOME/bin/hisat2-2.2.1/hisat2-build
