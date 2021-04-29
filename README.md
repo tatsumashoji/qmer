@@ -1,4 +1,4 @@
-# q-mer transformation: a generalized method for analyzing RNA-Seq data.
+# q-mer analysis: a generalized method for analyzing RNA-Seq data.
 
 # 1. About
 
@@ -7,11 +7,11 @@ To reproduce, follow the below.
 
 1. git clone https://github.com/tatsumashoji/qmer
 2. cd path/to/qmer/example/scripts
-3. Edit the command paths written in ``config`` file.
+3. Edit the command paths written in ``config`` file accordingly.
 4. ``bash all.sh``
-5. Follow the jupyter notebook "characterize_qmer_vectors.ipynb" to get Table 1.
-6. Follow the jupyter notebook "count_based.ipynb" to get Figure 2 (A).
-7. Follow the jupyter notebook "qmer_transformation.ipynb" to get Figure 2 other than (A).
+5. Follow the jupyter notebook "1.characterize_qmer_vectors.ipynb" to get Table 1.
+6. Follow the jupyter notebook "2.count_based.ipynb" to get Figure 2 (A).
+7. Follow the jupyter notebook "3.qmer_transformation.ipynb" to get Figure 2 other than (A).
 
 Note that ``all.sh`` will take more than 1 month since ``all.sh`` does followings.
 
