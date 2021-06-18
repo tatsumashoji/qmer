@@ -2,10 +2,9 @@
 
 fn=`basename $1`
 cwd=`dirname "${0}"`
-cat $1 | grep -v ^@ | cut -f10 | uniq -c | awk '{print$1,$2}' > $fn.tp
-python $cwd/make_fasta.py $fn.tp $fn.tp2
-python $cwd/count_qmer.py $fn.tp2 $3
-rm $fn.tp $fn.tp2
+cat $1 | grep -v ^@ | grep NH:i:1 | cut -f10 | sort | uniq -c | awk '{print$1,$2}' > $fn.tp
+python $cwd/count_qmer.py $fn.tp $3
+rm $fn.tp
 mkdir -p $2
 mv ${fn}*.qmer_* $2
 for i in `ls $2`;do

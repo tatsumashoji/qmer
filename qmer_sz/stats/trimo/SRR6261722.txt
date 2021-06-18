@@ -1,0 +1,24 @@
+TrimmomaticPE: Started with arguments:
+ -phred33 -threads 4 /home/mina-hosoi/tatsu/qmer_sz/scripts/../../qmer_sz/00_Rawdata/SRR6261722_1.fastq.gz /home/mina-hosoi/tatsu/qmer_sz/scripts/../../qmer_sz/00_Rawdata/SRR6261722_2.fastq.gz /home/mina-hosoi/tatsu/qmer_sz/scripts/../../qmer_sz/01_fastq_clean/SRR6261722_1.clean.fastq.gz /home/mina-hosoi/tatsu/qmer_sz/scripts/../../qmer_sz/01_fastq_clean/SRR6261722_1.clean.fastq.gz.unpaired /home/mina-hosoi/tatsu/qmer_sz/scripts/../../qmer_sz/01_fastq_clean/SRR6261722_2.clean.fastq.gz /home/mina-hosoi/tatsu/qmer_sz/scripts/../../qmer_sz/01_fastq_clean/SRR6261722_2.clean.fastq.gz.unpaired ILLUMINACLIP:/home/mina-hosoi/tatsu/bin/Trimmomatic-0.39/adapters/all.fa:2:30:10 TRAILING:3 LEADING:3 SLIDINGWINDOW:4:15 MINLEN:20
+Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT>TruSeq3_IndexedAdapterAGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Skipping duplicate Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAG>PrefixPE/1TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG'
+Using Long Clipping Sequence: 'TTTTTTTTTTAATGATACGGCGACCACCGAGATCTACAC'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT'
+Using Long Clipping Sequence: 'TTTTTTTTTTCAAGCAGAAGACGGCATACGA>TruSeq2_SEAGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC>PrefixPE/1TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC>PrefixPE/1AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'CAAGCAGAAGACGGCATACGAGATCGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
+Using Long Clipping Sequence: 'AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 16 forward/reverse sequences, 0 forward only sequences, 1 reverse only sequences
+Input Read Pairs: 50245218 Both Surviving: 48808633 (97.14%) Forward Only Surviving: 935062 (1.86%) Reverse Only Surviving: 378304 (0.75%) Dropped: 123219 (0.25%)
+TrimmomaticPE: Completed successfully

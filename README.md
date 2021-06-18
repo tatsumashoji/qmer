@@ -1,36 +1,29 @@
 # q-mer analysis: a generalized method for analyzing RNA-Seq data.
 
-# 1. About
+This repository is for the paper "q-mer analysis: a generalized method for analyzing RNA-Seq data."
 
-This repository is made for reproducing the results shown in the paper above.<br>
-To reproduce, follow the below.
 
-1. git clone https://github.com/tatsumashoji/qmer
-2. cd path/to/qmer/example/scripts
-3. Edit the command paths written in ``config`` file accordingly.
-4. ``bash all.sh``
-5. Follow the jupyter notebook "1.characterize_qmer_vectors.ipynb" to get Table 1.
-6. Follow the jupyter notebook "2.count_based.ipynb" to get Figure 2 (A).
-7. Follow the jupyter notebook "3.qmer_transformation.ipynb" to get Figure 2 other than (A).
+# 1. How to use
 
-Note that ``all.sh`` will take more than 1 month since ``all.sh`` does followings.
+To use q-mer analysis for the example data (example.sam), conduct the following.
 
-- Download fastq files. (36 RNA-Seq data in total).
-- QC, mapping and count for each RNA-Seq data.
-- Produce q-mer vector for each RNA-Seq data.
+```bash
+./qmer example.sam example_result 10
+```
 
-# 2. Requirements
+# 2. How to reproduce the Figures in the paper
 
-- SRA tool kit (2.10.8)(fastq_dump)
-- Trimmomatic (0.39)
-- HISAT2 (2-2.2.1)
-- featureCounts (2.0.1)
+To reproduce, follow the jupyter notebook in ``qmer_cocaine`` or ``qmer_sz``.
+Note that you need the gff file for _H. sapiens_ to follow the notebook ``1.count_based.ipynb``.
+
+# 3. Requirements
+
 - python (3.7.3)
- - anaconda3-5.3.1
- - biopython (1.75)
- - pandas (0.23.4)
- - numpy (1.15.1)
- - sklearn (0.24.1)
- - bokeh (2.2.3)
+- anaconda3-5.3.1
+- biopython (1.75)
+- pandas (0.23.4)
+- numpy (1.15.1)
+- sklearn (0.24.1)
+- bokeh (2.2.3)
 
 
